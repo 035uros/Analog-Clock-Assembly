@@ -5,10 +5,6 @@ init:
 	mov ah, 00
 	mov al, 02
 	int 10h
-	call main
-
-main proc
-
 	
 	;zvonca
 	mov ah, 06 		
@@ -40,6 +36,11 @@ main proc
 	int 10h
 	
 	
+start:
+	call main
+
+main proc
+
 
 	;unutrasnja pozadina
 	mov ah, 06 		;mod za crtanje, u ovom slucaju rutina za Scroll lines up
@@ -677,7 +678,7 @@ sl43:
 sl44:	
 	cmp bl, 46
 	jne sl45
-	jmp sek44
+	jmp sek46
 sl45:	
 	cmp bl, 47
 	jne sl46
@@ -1502,8 +1503,6 @@ sek29:
 	int 10h
 	inc ch
 	int 10h
-	inc ch
-	int 10h
 	jmp kraj
 sek28:
 	inc ch
@@ -1523,8 +1522,6 @@ sek28:
 	inc ch
 	inc cl
 	inc dl
-	int 10h
-	inc ch
 	int 10h
 	inc ch
 	int 10h
@@ -1558,8 +1555,6 @@ sek27:
 	inc cl
 	inc dl
 	int 10h
-	inc ch
-	int 10h
 	jmp kraj
 sek26:
 	inc ch
@@ -1583,10 +1578,6 @@ sek26:
 	inc dl
 	int 10h
 	inc ch
-	int 10h
-	inc ch
-	inc cl
-	inc dl
 	int 10h
 	inc ch
 	inc cl
@@ -1617,10 +1608,6 @@ sek25:
 	inc dl
 	int 10h
 	inc ch
-	int 10h
-	inc ch
-	inc cl
-	inc dl
 	int 10h
 	inc ch
 	inc cl
@@ -1658,13 +1645,9 @@ sek24:
 	inc cl
 	inc dl
 	int 10h
-	inc ch
-	inc cl
-	inc dl
-	int 10h
 	jmp kraj
 sek23:
-	mov si, 9
+	mov si, 7
 crtaj27:
 	inc ch
 	inc cl
@@ -1674,7 +1657,7 @@ crtaj27:
 	jnz crtaj27
 	jmp kraj
 sek22:
-	mov si, 6
+	mov si, 5
 	inc cl
 	inc dl
 	int 10h
@@ -1857,8 +1840,6 @@ sek31:
 	int 10h
 	inc ch
 	int 10h
-	inc ch
-	int 10h
 	jmp kraj
 sek32:
 	inc ch
@@ -1878,8 +1859,6 @@ sek32:
 	inc ch
 	dec cl
 	dec dl
-	int 10h
-	inc ch
 	int 10h
 	inc ch
 	int 10h
@@ -1913,8 +1892,6 @@ sek33:
 	dec cl
 	dec dl
 	int 10h
-	inc ch
-	int 10h
 	jmp kraj
 sek34:
 	inc ch
@@ -1943,10 +1920,10 @@ sek34:
 	dec cl
 	dec dl
 	int 10h
-	inc ch
-	dec cl
-	dec dl
-	int 10h
+	;inc ch
+	;dec cl
+	;dec dl
+	;int 10h
 	jmp kraj
 sek35:
 	inc ch
@@ -1973,14 +1950,12 @@ sek35:
 	int 10h
 	inc ch
 	int 10h
-	dec ch
-	dec cl
-	dec dl
-	int 10h
 	inc ch
 	dec cl
 	dec dl
 	int 10h
+	jmp kraj
+	
 	jmp kraj
 sek36:
 	inc ch
@@ -2013,13 +1988,13 @@ sek36:
 	dec cl
 	dec dl
 	int 10h
-	inc ch
-	dec cl
-	dec dl
-	int 10h
+	;inc ch
+	;dec cl
+	;dec dl
+	;int 10h
 	jmp kraj
 sek37:
-	mov si, 9
+	mov si, 8
 crtaj35:
 	inc ch
 	dec cl
@@ -2071,7 +2046,8 @@ crtaj33:
 	
 sek40:
 	mov si, 6
-	inc ch
+	dec cl
+	dec dl
 crtaj32:
 	inc ch
 	dec cl
@@ -2085,7 +2061,7 @@ crtaj32:
 	jmp kraj
 sek41:
 	mov si, 5
-	dec ch
+	;dec ch
 crtaj31:
 	inc ch
 	dec cl
@@ -2967,8 +2943,6 @@ min29:
 	int 10h
 	inc ch
 	int 10h
-	inc ch
-	int 10h
 	jmp sekunde
 min28:
 	inc ch
@@ -2988,8 +2962,6 @@ min28:
 	inc ch
 	inc cl
 	inc dl
-	int 10h
-	inc ch
 	int 10h
 	inc ch
 	int 10h
@@ -3023,8 +2995,6 @@ min27:
 	inc cl
 	inc dl
 	int 10h
-	inc ch
-	int 10h
 	jmp sekunde
 min26:
 	inc ch
@@ -3048,10 +3018,6 @@ min26:
 	inc dl
 	int 10h
 	inc ch
-	int 10h
-	inc ch
-	inc cl
-	inc dl
 	int 10h
 	inc ch
 	inc cl
@@ -3082,10 +3048,6 @@ min25:
 	inc dl
 	int 10h
 	inc ch
-	int 10h
-	inc ch
-	inc cl
-	inc dl
 	int 10h
 	inc ch
 	inc cl
@@ -3123,13 +3085,9 @@ min24:
 	inc cl
 	inc dl
 	int 10h
-	inc ch
-	inc cl
-	inc dl
-	int 10h
 	jmp sekunde
 min23:
-	mov si, 9
+	mov si, 8
 vuci27:
 	inc ch
 	inc cl
@@ -3322,8 +3280,6 @@ min31:
 	int 10h
 	inc ch
 	int 10h
-	inc ch
-	int 10h
 	jmp sekunde
 min32:
 	inc ch
@@ -3343,8 +3299,6 @@ min32:
 	inc ch
 	dec cl
 	dec dl
-	int 10h
-	inc ch
 	int 10h
 	inc ch
 	int 10h
@@ -3378,8 +3332,6 @@ min33:
 	dec cl
 	dec dl
 	int 10h
-	inc ch
-	int 10h
 	jmp sekunde
 min34:
 	inc ch
@@ -3403,10 +3355,6 @@ min34:
 	dec dl
 	int 10h
 	inc ch
-	int 10h
-	inc ch
-	dec cl
-	dec dl
 	int 10h
 	inc ch
 	dec cl
@@ -3442,10 +3390,6 @@ min35:
 	dec cl
 	dec dl
 	int 10h
-	inc ch
-	dec cl
-	dec dl
-	int 10h
 	jmp sekunde
 min36:
 	inc ch
@@ -3478,13 +3422,9 @@ min36:
 	dec cl
 	dec dl
 	int 10h
-	inc ch
-	dec cl
-	dec dl
-	int 10h
 	jmp sekunde
 min37:
-	mov si, 9
+	mov si, 8
 vuci35:
 	inc ch
 	dec cl
@@ -3987,7 +3927,7 @@ kraj:
 	int 21h			; DOS prekid za gore napomenutu komandu
 	cmp bl, dh
 	je kraj
-	jmp init
+	jmp start
 
 	mov ah, 4ch
 	int 21h
